@@ -20,6 +20,18 @@ namespace Sekiro_Save_Organizer
             InitializeComponent();
         }
 
+        public void SaveSettings()
+        {
+            var ProfileList = new ArrayList();
+            foreach (object item in Profiles.Items)
+            {
+                ProfileList.Add(item);
+            }
+
+            Properties.Settings.Default.Profiles = ProfileList;
+            Properties.Settings.Default.Save();
+        }
+
         private void Form2_Load(object sender, EventArgs e)
         {
             //Load Savefilepath
@@ -27,13 +39,17 @@ namespace Sekiro_Save_Organizer
             //Load Profilepath
             Profilepath.Text = Properties.Settings.Default.profilepath;
             //Load Profiles
-            foreach (string i in Properties.Settings.Default.Profiles)
+            try
             {
-                _items.Add(i);
-                // Change the DataSource.
-                Profiles.DataSource = null;
-                Profiles.DataSource = _items;
+                foreach (string i in Properties.Settings.Default.Profiles)
+                {
+                    _items.Add(i);
+                    // Change the DataSource.
+                    Profiles.DataSource = null;
+                    Profiles.DataSource = _items;
+                }
             }
+            catch { }
         }
 
         //Browse Button Savefilepath
@@ -81,14 +97,10 @@ namespace Sekiro_Save_Organizer
             Profiles.DataSource = null;
             Profiles.DataSource = _items;
 
-            var ProfileList = new ArrayList();
-            foreach (object item in Profiles.Items)
-            {
-                ProfileList.Add(item);
-            }
+            SaveSettings();
 
-            Properties.Settings.Default.Profiles = ProfileList;
-            Properties.Settings.Default.Save();
+            Form1 frm1 = new Form1();
+            frm1.LoadComboBox();
 
         }
 
@@ -99,6 +111,8 @@ namespace Sekiro_Save_Organizer
             _items[profileindex] = GetProfileName();
             Profiles.DataSource = null;
             Profiles.DataSource = _items;
+
+            SaveSettings();
         }
 
         //Remove Profiles
@@ -116,6 +130,8 @@ namespace Sekiro_Save_Organizer
             }
             Profiles.DataSource = null;
             Profiles.DataSource = _items;
+
+            SaveSettings();
         }
              
          
