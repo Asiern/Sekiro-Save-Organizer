@@ -7,3 +7,4 @@ Save Organizer for Sekiro: Shadows Die Twice
 # Developing
 * [ ] Support for multiple profiles
 * [ ] Graphical improvement
+* [ ] Macros
