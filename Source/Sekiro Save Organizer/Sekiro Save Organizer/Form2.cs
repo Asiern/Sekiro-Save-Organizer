@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Sekiro_Save_Organizer
 {
     public partial class Form2 : Form
     {
+        List<string> _items = new List<string>();
 
         public Form2()
         {
@@ -20,12 +22,18 @@ namespace Sekiro_Save_Organizer
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
-        }
-
-        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
-        {
-
+            //Load Savefilepath
+            Savefilepath.Text = Properties.Settings.Default.savefilepath;
+            //Load Profilepath
+            Profilepath.Text = Properties.Settings.Default.profilepath;
+            //Load Profiles
+            foreach (string i in Properties.Settings.Default.Profiles)
+            {
+                _items.Add(i);
+                // Change the DataSource.
+                Profiles.DataSource = null;
+                Profiles.DataSource = _items;
+            }
         }
 
         //Browse Button Savefilepath
@@ -40,7 +48,6 @@ namespace Sekiro_Save_Organizer
             }
         }
 
-
         //Brwose Button Profilepath
         private void button6_Click(object sender, EventArgs e)
         {
@@ -54,27 +61,63 @@ namespace Sekiro_Save_Organizer
             }
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        //Get Profile Name
+        public string GetProfileName()
         {
+            string Profilename;
 
+            //Inputbox Code
+            Profilename = Microsoft.VisualBasic.Interaction.InputBox(" ","Profile Name","New Profile",100,0);
+
+            return Profilename;
         }
 
+        //Add Profiles
         private void button1_Click(object sender, EventArgs e)
         {
-            ListBox listBox1 = new ListBox();
-            
-            listBox1.Items.Add(ToString());
+            _items.Add(GetProfileName());
+
+            // Change the DataSource.
+            Profiles.DataSource = null;
+            Profiles.DataSource = _items;
+
+            var ProfileList = new ArrayList();
+            foreach (object item in Profiles.Items)
+            {
+                ProfileList.Add(item);
+            }
+
+            Properties.Settings.Default.Profiles = ProfileList;
+            Properties.Settings.Default.Save();
+
         }
 
-       
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        //Edit Profile Names
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            int profileindex = Profiles.SelectedIndex;
+            _items[profileindex] = GetProfileName();
+            Profiles.DataSource = null;
+            Profiles.DataSource = _items;
         }
 
+        //Remove Profiles
         private void button4_Click(object sender, EventArgs e)
         {
-            
+            int profileindex = Profiles.SelectedIndex;
+
+            try
+            {
+                _items.RemoveAt(profileindex);
+            }
+            catch
+            {
+
+            }
+            Profiles.DataSource = null;
+            Profiles.DataSource = _items;
         }
+             
+         
     }
 }

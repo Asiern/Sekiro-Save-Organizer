@@ -46,5 +46,16 @@ namespace Sekiro_Save_Organizer.Properties {
                 this["profilepath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.ArrayList Profiles {
+            get {
+                return ((global::System.Collections.ArrayList)(this["Profiles"]));
+            }
+            set {
+                this["Profiles"] = value;
+            }
+        }
     }
 }
