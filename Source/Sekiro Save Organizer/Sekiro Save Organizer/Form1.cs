@@ -201,10 +201,30 @@ namespace Sekiro_Save_Organizer
             Settings.Show();
         }
 
+        //Refresh Profiles
         private void button8_Click(object sender, EventArgs e)
         {
             comboBox1.Items.Clear();
             LoadComboBox();
         }
+
+        //Load List
+        public void LoadList()
+        {
+            ArrayList Saves = new ArrayList();
+            Saves = Properties.Settings.Default.Saves;
+            int i = 0;
+            int z;
+            while ( Saves[i] != comboBox1.Text)
+            {
+                i++;
+            }
+            z = i + 1;
+            while (Saves[z] != " ")
+            {
+
+            }
+        }
     }
+
 }
