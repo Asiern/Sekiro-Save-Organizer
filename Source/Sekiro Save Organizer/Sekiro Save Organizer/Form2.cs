@@ -49,7 +49,10 @@ namespace Sekiro_Save_Organizer
                     Profiles.DataSource = _items;
                 }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Browse Button Savefilepath
@@ -124,9 +127,9 @@ namespace Sekiro_Save_Organizer
             {
                 _items.RemoveAt(profileindex);
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             Profiles.DataSource = null;
             Profiles.DataSource = _items;

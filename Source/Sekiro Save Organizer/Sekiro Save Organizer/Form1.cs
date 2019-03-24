@@ -20,16 +20,6 @@ namespace Sekiro_Save_Organizer
         {
             InitializeComponent();
         }
-               
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         //Save Settings
         public void SaveSettings()
@@ -44,14 +34,13 @@ namespace Sekiro_Save_Organizer
             Properties.Settings.Default.Save();
         }
 
-        //Open Settings
+        //Open Profiles
         private void button4_Click(object sender, EventArgs e)
         {
-            Form2 Settings = new Form2();
-            Settings.Show();
+            Form2 Profiles = new Form2();
+            Profiles.Show();
         }
 
-        
         //Load ComboBox
         public void LoadComboBox()
         {
@@ -63,9 +52,9 @@ namespace Sekiro_Save_Organizer
                     comboBox1.Items.Add(i);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -77,10 +66,7 @@ namespace Sekiro_Save_Organizer
             {
                 comboBox1.SelectedIndex = 0;
             }
-            catch
-            {
-
-            }
+            catch { }
 
             //Load Saves
             try
@@ -94,9 +80,9 @@ namespace Sekiro_Save_Organizer
                     Saves.DataSource = _items;
                 }
             }
-            catch 
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
         }
       
@@ -152,7 +138,7 @@ namespace Sekiro_Save_Organizer
             _items[saveindex] = newname;
             Saves.DataSource = null;
             Saves.DataSource = _items;
-            //Rename dir
+            //Rename dir            
             Directory.Move(Path.Combine(path,comboBox1.Text,name),Path.Combine(path,comboBox1.Text,newname));
 
             SaveSettings();
@@ -183,21 +169,42 @@ namespace Sekiro_Save_Organizer
         {
             string path = Path.Combine(Properties.Settings.Default.profilepath, comboBox1.Text, Saves.Text);
             MessageBox.Show("You are about to delete " + Saves.Text);
-            Directory.Delete(path, true);
+            try
+            {
+                Directory.Delete(path, true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             int saveindex = Saves.SelectedIndex;
 
             try
             {
                 _items.RemoveAt(saveindex);
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             Saves.DataSource = null;
             Saves.DataSource = _items;
 
             SaveSettings();
+        }
+
+        //Open Settings
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form3 Settings = new Form3();
+            Settings.Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            LoadComboBox();
         }
     }
 }
