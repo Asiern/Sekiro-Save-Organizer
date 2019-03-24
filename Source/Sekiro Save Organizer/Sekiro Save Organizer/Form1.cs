@@ -215,7 +215,7 @@ namespace Sekiro_Save_Organizer
             Saves = Properties.Settings.Default.Saves;
             int i = 0;
             int z;
-            while ( Saves[i] != comboBox1.Text)
+            while (Saves[i] != comboBox1.Text)
             {
                 i++;
             }
