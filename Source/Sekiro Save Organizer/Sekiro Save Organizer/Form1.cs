@@ -217,6 +217,11 @@ namespace Sekiro_Save_Organizer
         {
             comboBox1.Items.Clear();
             LoadComboBox();
+            try
+            {
+                comboBox1.SelectedIndex = 0;
+            }
+            catch { }
         }
 
         //Hot Keys
