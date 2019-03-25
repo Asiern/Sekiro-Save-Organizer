@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Sekiro_Save_Organizer.Properties;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -60,6 +62,8 @@ namespace Sekiro_Save_Organizer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Hot Keys
+            KeyPreview = true;
             //Load ComboBox
             LoadComboBox();
             try
@@ -85,7 +89,7 @@ namespace Sekiro_Save_Organizer
                 MessageBox.Show(ex.Message);
             }
         }
-      
+
         //Get Save Name
         public string GetSaveName()
         {
@@ -96,13 +100,13 @@ namespace Sekiro_Save_Organizer
 
             return Profilename;
         }
-       
+
         //Import Button
         private void button1_Click(object sender, EventArgs e)
         {
             //Select Path
             string filename = System.IO.Path.GetFileName(Properties.Settings.Default.savefilepath);
-            string profilepath = @Path.Combine(Properties.Settings.Default.profilepath, comboBox1.Text,filename);
+            string profilepath = @Path.Combine(Properties.Settings.Default.profilepath, comboBox1.Text, filename);
             string Savefilepath = @Properties.Settings.Default.savefilepath;
             if (!System.IO.Directory.Exists(profilepath))
             {
@@ -125,23 +129,30 @@ namespace Sekiro_Save_Organizer
             Saves.DataSource = _items;
 
             //Save Settings
-            SaveSettings();           
+            SaveSettings();
         }
 
         //Name Change
         private void button5_Click(object sender, EventArgs e)
         {
-            string path = Properties.Settings.Default.profilepath;
-            int saveindex = Saves.SelectedIndex;
-            string name = Saves.SelectedItem.ToString();
-            string newname = GetSaveName();
-            _items[saveindex] = newname;
-            Saves.DataSource = null;
-            Saves.DataSource = _items;
-            //Rename dir            
-            Directory.Move(Path.Combine(path,comboBox1.Text,name),Path.Combine(path,comboBox1.Text,newname));
+            try
+            {
+                string path = Properties.Settings.Default.profilepath;
+                int saveindex = Saves.SelectedIndex;
+                string name = Saves.SelectedItem.ToString();
+                string newname = GetSaveName();
+                _items[saveindex] = newname;
+                Saves.DataSource = null;
+                Saves.DataSource = _items;
+                //Rename dir            
+                Directory.Move(Path.Combine(path, comboBox1.Text, name), Path.Combine(path, comboBox1.Text, newname));
 
-            SaveSettings();
+                SaveSettings();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Load Saves
@@ -149,22 +160,22 @@ namespace Sekiro_Save_Organizer
         {
             string filename = System.IO.Path.GetFileName(Properties.Settings.Default.savefilepath);
             string profilepath = @Path.Combine(Properties.Settings.Default.profilepath, comboBox1.Text, Saves.Text);
-            string Savefilepath = @Properties.Settings.Default.savefilepath;            
-            System.IO.File.Copy(Path.Combine(profilepath, filename),Savefilepath, true);
+            string Savefilepath = @Properties.Settings.Default.savefilepath;
+            System.IO.File.Copy(Path.Combine(profilepath, filename), Savefilepath, true);
         }
 
-        //Replace
+        //Replace Saves
         private void button2_Click(object sender, EventArgs e)
         {
             string filename = System.IO.Path.GetFileName(Properties.Settings.Default.savefilepath);
             string profilepath = @Path.Combine(Properties.Settings.Default.profilepath, comboBox1.Text, Saves.Text);
             string Savefilepath = @Properties.Settings.Default.savefilepath;
-            System.IO.File.Copy(Savefilepath,Path.Combine(profilepath, filename), true);
+            System.IO.File.Copy(Savefilepath, Path.Combine(profilepath, filename), true);
 
             SaveSettings();
         }
 
-        //Remove
+        //Remove Saves
         private void button6_Click(object sender, EventArgs e)
         {
             string path = Path.Combine(Properties.Settings.Default.profilepath, comboBox1.Text, Saves.Text);
@@ -208,23 +219,34 @@ namespace Sekiro_Save_Organizer
             LoadComboBox();
         }
 
-        //Load List
-        public void LoadList()
-        {
-            ArrayList Saves = new ArrayList();
-            Saves = Properties.Settings.Default.Saves;
-            int i = 0;
-            int z;
-            while (Saves[i] != comboBox1.Text)
+        //Hot Keys
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {         
+            //Edit Button
+            if(e.KeyCode == Settings.Default.edit)
             {
-                i++;
+                button5.PerformClick();
             }
-            z = i + 1;
-            while (Saves[z] != " ")
+            //Import Button
+            if (e.KeyCode == Settings.Default.import)
             {
-
+                button1.PerformClick();
+            }
+            //Load Button
+            if (e.KeyCode == Settings.Default.load)
+            {
+                button3.PerformClick();
+            }
+            //Replace Button
+            if (e.KeyCode == Settings.Default.replace)
+            {
+                button2.PerformClick();
+            }
+            //Remove Button
+            if (e.KeyCode == Settings.Default.remove)
+            {
+                button6.PerformClick();
             }
         }
     }
-
 }

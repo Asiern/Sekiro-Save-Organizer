@@ -14,5 +14,20 @@
     <Setting Name="Saves" Type="System.Collections.ArrayList" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="edit" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">F1</Value>
+    </Setting>
+    <Setting Name="import" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">F2</Value>
+    </Setting>
+    <Setting Name="load" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">F3</Value>
+    </Setting>
+    <Setting Name="replace" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">F4</Value>
+    </Setting>
+    <Setting Name="remove" Type="System.Windows.Forms.Keys" Scope="User">
+      <Value Profile="(Default)">F5</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -68,5 +68,65 @@ namespace Sekiro_Save_Organizer.Properties {
                 this["Saves"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("F1")]
+        public global::System.Windows.Forms.Keys edit {
+            get {
+                return ((global::System.Windows.Forms.Keys)(this["edit"]));
+            }
+            set {
+                this["edit"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("F2")]
+        public global::System.Windows.Forms.Keys import {
+            get {
+                return ((global::System.Windows.Forms.Keys)(this["import"]));
+            }
+            set {
+                this["import"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("F3")]
+        public global::System.Windows.Forms.Keys load {
+            get {
+                return ((global::System.Windows.Forms.Keys)(this["load"]));
+            }
+            set {
+                this["load"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("F4")]
+        public global::System.Windows.Forms.Keys replace {
+            get {
+                return ((global::System.Windows.Forms.Keys)(this["replace"]));
+            }
+            set {
+                this["replace"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("F5")]
+        public global::System.Windows.Forms.Keys remove {
+            get {
+                return ((global::System.Windows.Forms.Keys)(this["remove"]));
+            }
+            set {
+                this["remove"] = value;
+            }
+        }
     }
 }
