@@ -60,10 +60,25 @@ namespace Sekiro_Save_Organizer
             }
         }
 
+        //Load MAIN
         private void Form1_Load(object sender, EventArgs e)
         {
             //Hot Keys
             KeyPreview = true;
+            //Lang
+            if (Settings.Default.Lang == "")
+            {
+                Settings.Default.Lang = "en";
+
+            }
+            else if (Settings.Default.Lang == "en")
+            {
+                
+            }
+            else if (Settings.Default.Lang == "es")
+            {
+                
+            }
             //Load ComboBox
             LoadComboBox();
             try
@@ -115,21 +130,23 @@ namespace Sekiro_Save_Organizer
 
             try
             {
-                System.IO.File.Copy(Savefilepath, Path.Combine(profilepath, filename), true);
+               
+                System.IO.File.Copy(Savefilepath, Path.Combine(profilepath, filename), false);
+                //Add Item to listbox
+                _items.Add(filename);
+
+                // Change the DataSource.
+                Saves.DataSource = null;
+                Saves.DataSource = _items;
+
+                //Save Settings
+                SaveSettings();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            //Add Item to listbox
-            _items.Add(filename);
-
-            // Change the DataSource.
-            Saves.DataSource = null;
-            Saves.DataSource = _items;
-
-            //Save Settings
-            SaveSettings();
+            
         }
 
         //Name Change

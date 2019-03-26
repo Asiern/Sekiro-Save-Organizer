@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -94,16 +95,17 @@ namespace Sekiro_Save_Organizer
         //Add Profiles
         private void button1_Click(object sender, EventArgs e)
         {
-            _items.Add(GetProfileName());
+            string profilename = GetProfileName();
+            _items.Add(profilename);
 
             // Change the DataSource.
             Profiles.DataSource = null;
             Profiles.DataSource = _items;
-
-            SaveSettings();
-
+                        
             Form1 frm1 = new Form1();
             frm1.LoadComboBox();
+
+            SaveSettings();
 
         }
 
