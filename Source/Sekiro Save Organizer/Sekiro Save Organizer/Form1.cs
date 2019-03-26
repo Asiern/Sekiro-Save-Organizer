@@ -60,25 +60,53 @@ namespace Sekiro_Save_Organizer
             }
         }
 
-        //Load MAIN
-        private void Form1_Load(object sender, EventArgs e)
+        //Language
+        public void Lang()
         {
-            //Hot Keys
-            KeyPreview = true;
-            //Lang
+            //Default
             if (Settings.Default.Lang == "")
             {
                 Settings.Default.Lang = "en";
-
             }
+            //English
             else if (Settings.Default.Lang == "en")
             {
-                
+                label1.Text = "Profiles";
+                label2.Text = "Savefiles";
+                button8.Text = "Refresh Profiles";
+                button4.Text = "Profiles";
+                button5.Text = "Edit";
+                button1.Text = "Import";
+                button3.Text = "Load";
+                button2.Text = "Replace";
+                button6.Text = "Remove";
+                button7.Text = "Settings";
             }
+            //Spanish
             else if (Settings.Default.Lang == "es")
             {
-                
+                label1.Text = "Perfiles";
+                label2.Text = "Guardados";
+                button8.Text = "Refrescar Perfiles";
+                button4.Text = "Perfiles";
+                button5.Text = "Editar";
+                button1.Text = "Importar";
+                button3.Text = "Cargar";
+                button2.Text = "Remplazar";
+                button6.Text = "Borrar";
+                button7.Text = "Ajustes";
             }
+        }
+
+        //Load MAIN
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //Load Language
+            Lang();
+
+            //Hot Keys
+            KeyPreview = true;
+            
             //Load ComboBox
             LoadComboBox();
             try

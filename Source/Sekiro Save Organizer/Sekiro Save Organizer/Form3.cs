@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sekiro_Save_Organizer.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,20 @@ namespace Sekiro_Save_Organizer
 
         private void Form3_Load(object sender, EventArgs e)
         {
-           
+            //Select Language
+            Lang();
+
+            //Combobox Lang selected index
+            switch (Properties.Settings.Default.Lang)
+            {
+                case "en":
+                    comboBox1.SelectedIndex = 0;
+                    break;
+                case "es":
+                    comboBox1.SelectedIndex = 1;
+                    break;
+            }
+
             StringConverter sc = new StringConverter();
 
             //Load
@@ -42,6 +56,45 @@ namespace Sekiro_Save_Organizer
             string text5 = sc.ConvertToString(Properties.Settings.Default.remove);
             textBox5.Text = text5;
         }
+        
+        //Language
+        public void Lang()
+        {
+            //Default
+            if (Settings.Default.Lang == "")
+            {
+                Settings.Default.Lang = "en";
+            }
+            //English
+            else if (Settings.Default.Lang == "en")
+            {
+                this.Text = "Settings";
+                groupBox1.Text = "HotKeys";
+                groupBox2.Text = "Language";
+                label1.Text = "Edit";
+                label2.Text = "Import";
+                label3.Text = "Load";
+                label5.Text = "Remove";
+                label4.Text = "Replace";
+                label6.Text = "Language";
+
+
+            }
+            //Spanish
+            else if (Settings.Default.Lang == "es")
+            {
+                this.Text = "Ajustes";
+                groupBox1.Text = "Teclas Rapidas";
+                groupBox2.Text = "Lenguaje";
+                label1.Text = "Editar";
+                label2.Text = "Importar";
+                label3.Text = "Cargar";
+                label5.Text = "Borrar";
+                label4.Text = "Remplazar";
+                label6.Text = "Lenguaje";
+            }
+        }
+
         //Save Settings
         public void SaveSettings()
         {
@@ -141,6 +194,22 @@ namespace Sekiro_Save_Organizer
                 MessageBox.Show(ex.Message);
                 textBox5.Text = "";
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Language = comboBox1.Text;
+            switch (Language)
+            {
+                case "English":
+                    Properties.Settings.Default.Lang = "en";
+                    break;
+                case "Spanish":
+                    Properties.Settings.Default.Lang = "es";
+                    break;
+            }
+            SaveSettings();
+            
         }
     }
 

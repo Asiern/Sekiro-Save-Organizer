@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sekiro_Save_Organizer.Properties;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,6 +36,8 @@ namespace Sekiro_Save_Organizer
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            //Select Language
+            Lang();
             //Load Savefilepath
             Savefilepath.Text = Properties.Settings.Default.savefilepath;
             //Load Profilepath
@@ -53,6 +56,45 @@ namespace Sekiro_Save_Organizer
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        //Language
+        public void Lang()
+        {
+            //Default
+            if (Settings.Default.Lang == "")
+            {
+                Settings.Default.Lang = "en";
+            }
+            //English
+            else if (Settings.Default.Lang == "en")
+            {
+                groupBox1.Text = "Paths";
+                groupBox2.Text = "Profiles";
+                label1.Text = "Savefile path";
+                label2.Text = "Profiles path";
+                button5.Text = "Browse";
+                button6.Text = "Browse";
+                button1.Text = "New";
+                button2.Text = "Edit";
+                button4.Text = "Delete";
+                this.Text = "Profiles";
+
+            }
+            //Spanish
+            else if (Settings.Default.Lang == "es")
+            {
+                groupBox1.Text = "Rutas";
+                groupBox2.Text = "Perfiles";
+                label1.Text = "Ruta de los archivos de guardado";
+                label2.Text = "Ruta del guardado de los perfiles";
+                button5.Text = "Buscar";
+                button6.Text = "Buscar";
+                button1.Text = "Nuevo";
+                button2.Text = "Editar";
+                button4.Text = "Borrar";
+                this.Text = "Perfiles";
             }
         }
 
