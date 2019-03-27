@@ -42,7 +42,7 @@ namespace Sekiro_Save_Organizer
             Savefilepath.Text = Properties.Settings.Default.savefilepath;
             //Load Profilepath
             Profilepath.Text = Properties.Settings.Default.profilepath;
-            //Load Profiles
+            /*//Load Profiles
             try
             {
                 if (Profiles != null)
@@ -50,17 +50,16 @@ namespace Sekiro_Save_Organizer
                     foreach (string i in Properties.Settings.Default.Profiles)
                     {
                         _items.Add(i);
-                        // Change the DataSource.
-                        
                     }
                     Profiles.DataSource = null;
                     Profiles.DataSource = _items;
                 }
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
+            }*/
         }
 
         //Language

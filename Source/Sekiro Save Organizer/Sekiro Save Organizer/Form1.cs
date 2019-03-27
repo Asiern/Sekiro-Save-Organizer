@@ -108,14 +108,17 @@ namespace Sekiro_Save_Organizer
             //Hot Keys
             KeyPreview = true;
             
-            //Load ComboBox
+            /*//Load ComboBox
             this.LoadComboBox();
             try
             {
-                comboBox1.SelectedIndex = 0;
+                if (Settings.Default.Profiles != null)
+                {
+                    comboBox1.SelectedIndex = 0;
+                }
             }
-            catch { }
-            
+            catch { }*/
+                            
             //Load Saves
             try
             {
