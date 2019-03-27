@@ -45,10 +45,14 @@ namespace Sekiro_Save_Organizer
             //Load Profiles
             try
             {
-                foreach (string i in Properties.Settings.Default.Profiles)
+                if (Profiles != null)
                 {
-                    _items.Add(i);
-                    // Change the DataSource.
+                    foreach (string i in Properties.Settings.Default.Profiles)
+                    {
+                        _items.Add(i);
+                        // Change the DataSource.
+                        
+                    }
                     Profiles.DataSource = null;
                     Profiles.DataSource = _items;
                 }

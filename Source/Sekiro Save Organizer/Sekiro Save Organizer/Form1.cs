@@ -101,28 +101,32 @@ namespace Sekiro_Save_Organizer
         //Load MAIN
         private void Form1_Load(object sender, EventArgs e)
         {
+            List<string> _items = new List<string>();
             //Load Language
-            Lang();
+            this.Lang();
 
             //Hot Keys
             KeyPreview = true;
             
             //Load ComboBox
-            LoadComboBox();
+            this.LoadComboBox();
             try
             {
                 comboBox1.SelectedIndex = 0;
             }
             catch { }
-
+            
             //Load Saves
             try
             {
-
-                foreach (string i in Properties.Settings.Default.Saves)
+                if (Properties.Settings.Default.Saves != null)
                 {
-                    _items.Add(i);
-                    // Change the DataSource.
+                    foreach (string i in Properties.Settings.Default.Saves)
+                    {
+                        _items.Add(i);
+                        // Change the DataSource.
+
+                    }
                     Saves.DataSource = null;
                     Saves.DataSource = _items;
                 }
