@@ -136,7 +136,16 @@ namespace Sekiro_Save_Organizer
 
             return Profilename;
         }
+        public void AddProfile(string name)
+        {
+            _items.Add(name);
 
+            // Change the DataSource.
+            Profiles.DataSource = null;
+            Profiles.DataSource = _items;
+
+            SaveSettings();
+        }
         //Add Profiles
         private void button1_Click(object sender, EventArgs e)
         {

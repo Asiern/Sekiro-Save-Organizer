@@ -48,10 +48,19 @@ namespace Sekiro_Save_Organizer
         {
             try
             {
-                comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-                foreach (string i in Properties.Settings.Default.Profiles)
+                if (Properties.Settings.Default.Profiles != null)
                 {
-                    comboBox1.Items.Add(i);
+                    Form2 frm2 = new Form2();
+                    frm2.AddProfile("Default");
+                    LoadComboBox();
+                }
+                else
+                {
+                    comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+                    foreach (string i in Properties.Settings.Default.Profiles)
+                    {
+                        comboBox1.Items.Add(i);
+                    }
                 }
             }
             catch (Exception ex)
