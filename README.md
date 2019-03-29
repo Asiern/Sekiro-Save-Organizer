@@ -3,7 +3,7 @@ Save Organizer for Sekiro: Shadows Die Twice
 
 # Developed
 * [x] Save management
-* [x] Hotkeys
+* [x] Programable Hotkeys
 * [x] Multi Language support
 
 # Developing
