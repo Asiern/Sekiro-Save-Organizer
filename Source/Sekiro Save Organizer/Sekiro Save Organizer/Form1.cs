@@ -48,19 +48,10 @@ namespace Sekiro_Save_Organizer
         {
             try
             {
-                if (Properties.Settings.Default.Profiles != null)
+                comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+                foreach (string i in Properties.Settings.Default.Profiles)
                 {
-                    Form2 frm2 = new Form2();
-                    frm2.AddProfile("Default");
-                    LoadComboBox();
-                }
-                else
-                {
-                    comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-                    foreach (string i in Properties.Settings.Default.Profiles)
-                    {
-                        comboBox1.Items.Add(i);
-                    }
+                    comboBox1.Items.Add(i);
                 }
             }
             catch (Exception ex)
@@ -68,6 +59,7 @@ namespace Sekiro_Save_Organizer
                 MessageBox.Show(ex.Message);
             }
         }
+    
 
         //Language
         public void Lang()
@@ -107,6 +99,28 @@ namespace Sekiro_Save_Organizer
             }
         }
 
+        //Load Saves
+        public void LoadSaves(ArrayList saves)
+        {
+            try
+            {
+                Saves.DataSource = null;
+                Saves.Items.Clear();
+                foreach (string i in saves)
+                    {
+                        _items.Add(i);
+                        // Change the DataSource.
+
+                    }
+                    Saves.DataSource = null;
+                    Saves.DataSource = _items;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         //Load MAIN
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -117,7 +131,7 @@ namespace Sekiro_Save_Organizer
             //Hot Keys
             KeyPreview = true;
             
-            /*//Load ComboBox
+            //Load ComboBox
             this.LoadComboBox();
             try
             {
@@ -126,27 +140,9 @@ namespace Sekiro_Save_Organizer
                     comboBox1.SelectedIndex = 0;
                 }
             }
-            catch { }*/
-                            
-            //Load Saves
-            try
-            {
-                if (Properties.Settings.Default.Saves != null)
-                {
-                    foreach (string i in Properties.Settings.Default.Saves)
-                    {
-                        _items.Add(i);
-                        // Change the DataSource.
+            catch { }
 
-                    }
-                    Saves.DataSource = null;
-                    Saves.DataSource = _items;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //LoadSaves();
         }
 
         //Get Save Name
@@ -314,5 +310,40 @@ namespace Sekiro_Save_Organizer
                 button6.PerformClick();
             }
         }
+
+        //Test
+        private void button9_Click(object sender, EventArgs e)
+        {
+            //string path = @"C:\Users\me\Projects\myProject";
+            //string result = System.IO.Path.GetFileName(path);
+
+            string profile = comboBox1.Text;
+            MessageBox.Show(profile);
+            ArrayList saves = new ArrayList();
+            //Profile path
+            string profilepath = @Path.Combine(Properties.Settings.Default.profilepath,profile);
+            //Search for saves in profile folder
+            try
+            {
+                var folders = Directory.GetDirectories(profilepath);
+                foreach (string dir in folders)
+                {
+                    MessageBox.Show(dir);
+                    saves.Add(System.IO.Path.GetFileName(dir));
+                    MessageBox.Show(System.IO.Path.GetFileName(dir));
+                }
+                //Load Saves
+                LoadSaves(saves);
+            }
+
+            
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        
     }
 }

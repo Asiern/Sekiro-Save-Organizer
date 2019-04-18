@@ -42,7 +42,7 @@ namespace Sekiro_Save_Organizer
             Savefilepath.Text = Properties.Settings.Default.savefilepath;
             //Load Profilepath
             Profilepath.Text = Properties.Settings.Default.profilepath;
-            /*//Load Profiles
+            //Load Profiles
             try
             {
                 if (Profiles != null)
@@ -59,7 +59,7 @@ namespace Sekiro_Save_Organizer
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }*/
+            }
         }
 
         //Language
