@@ -58,8 +58,7 @@ namespace Sekiro_Save_Organizer
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-    
+        }    
 
         //Language
         public void Lang()
@@ -104,8 +103,10 @@ namespace Sekiro_Save_Organizer
         {
             try
             {
-                Saves.DataSource = null;
-                Saves.Items.Clear();
+                //Clear data source
+                _items.Clear();
+
+                //Load data source
                 foreach (string i in saves)
                     {
                         _items.Add(i);
@@ -311,32 +312,28 @@ namespace Sekiro_Save_Organizer
             }
         }
 
-        //Test
-        private void button9_Click(object sender, EventArgs e)
+        //Load different profile saves
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //string path = @"C:\Users\me\Projects\myProject";
-            //string result = System.IO.Path.GetFileName(path);
-
+            ClearSaves();
             string profile = comboBox1.Text;
-            MessageBox.Show(profile);
             ArrayList saves = new ArrayList();
+            
+
             //Profile path
-            string profilepath = @Path.Combine(Properties.Settings.Default.profilepath,profile);
+            string profilepath = @Path.Combine(Properties.Settings.Default.profilepath, profile);
+
             //Search for saves in profile folder
             try
             {
                 var folders = Directory.GetDirectories(profilepath);
                 foreach (string dir in folders)
                 {
-                    MessageBox.Show(dir);
                     saves.Add(System.IO.Path.GetFileName(dir));
-                    MessageBox.Show(System.IO.Path.GetFileName(dir));
                 }
                 //Load Saves
                 LoadSaves(saves);
             }
-
-            
 
             catch (Exception ex)
             {
@@ -344,6 +341,11 @@ namespace Sekiro_Save_Organizer
             }
         }
 
-        
+        //Clear data in saves listbox
+        public void ClearSaves()
+        {
+            Saves.DataSource = null;
+            Saves.Items.Clear();
+        }
     }
 }
