@@ -5,7 +5,7 @@ Save Organizer for Sekiro: Shadows Die Twice
 * [x] Save management
 * [x] Programable Hotkeys
 * [x] Multi Language support
+* [x] Support for multiple profiles
 
 # Developing
-* [ ] Support for multiple profiles
 * [ ] Graphical improvement
