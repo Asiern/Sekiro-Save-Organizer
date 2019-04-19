@@ -315,18 +315,20 @@ namespace Sekiro_Save_Organizer
         //Load different profile saves
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ClearSaves();
-            string profile = comboBox1.Text;
-            ArrayList saves = new ArrayList();
-            
-
-            //Profile path
-            string profilepath = @Path.Combine(Properties.Settings.Default.profilepath, profile);
-
-            //Search for saves in profile folder
+          
             try
             {
+                ClearSaves();
+                string profile = comboBox1.Text;
+                ArrayList saves = new ArrayList();
+
+
+                //Profile path
+                string profilepath = @Path.Combine(Properties.Settings.Default.profilepath, profile);
+
                 var folders = Directory.GetDirectories(profilepath);
+
+                //Search for saves in profile folder
                 foreach (string dir in folders)
                 {
                     saves.Add(System.IO.Path.GetFileName(dir));
