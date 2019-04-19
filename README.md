@@ -1,6 +1,9 @@
 # Sekiro-Save-Organizer
 Save Organizer for Sekiro: Shadows Die Twice 
 
+# User's Guide
+
+
 # Developed
 * [x] Save management
 * [x] Programable Hotkeys
