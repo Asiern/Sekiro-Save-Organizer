@@ -92,7 +92,7 @@ namespace Sekiro_Save_Organizer
                 button5.Text = "Editar";
                 button1.Text = "Importar";
                 button3.Text = "Cargar";
-                button2.Text = "Remplazar";
+                button2.Text = "Reemplazar";
                 button6.Text = "Borrar";
                 button7.Text = "Ajustes";
             }
