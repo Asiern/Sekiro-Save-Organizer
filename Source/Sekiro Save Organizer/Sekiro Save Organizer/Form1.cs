@@ -132,10 +132,11 @@ namespace Sekiro_Save_Organizer
             //Hot Keys
             KeyPreview = true;
             
-            //Load ComboBox
-            this.LoadComboBox();
+                       
             try
             {
+                //Load ComboBox
+                this.LoadComboBox();
                 if (Settings.Default.Profiles != null)
                 {
                     comboBox1.SelectedIndex = 0;
@@ -236,16 +237,16 @@ namespace Sekiro_Save_Organizer
         //Remove Saves
         private void button6_Click(object sender, EventArgs e)
         {
-            string path = Path.Combine(Properties.Settings.Default.profilepath, comboBox1.Text, Saves.Text);
-            MessageBox.Show("You are about to delete " + Saves.Text);
-            try
-            {
-                Directory.Delete(path, true);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           string path = Path.Combine(Properties.Settings.Default.profilepath, comboBox1.Text, Saves.Text);
+            
+               try
+               {
+                   Directory.Delete(path, true);
+               }
+               catch (Exception ex)
+               {
+                   MessageBox.Show(ex.Message);
+               }
 
             int saveindex = Saves.SelectedIndex;
 
