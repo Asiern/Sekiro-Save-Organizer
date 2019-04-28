@@ -24,7 +24,7 @@ namespace Sekiro_Save_Organizer
         {
             InitializeComponent();
             WebClient webClient = new WebClient();
-            if (!webClient.DownloadString("https://pastebin.com/raw/paSm7NLU").Contains("1.1"))
+            if (!webClient.DownloadString("https://pastebin.com/raw/paSm7NLU").Contains("1.2"))
             {
                 if (MessageBox.Show("Update available", "SekiroSaveOrganizerUpdater", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
