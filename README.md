@@ -18,7 +18,7 @@ Things you might need to know:
 
 
 Program Settup:
-1. Lead to Profiles to configure the program. Once here, select the path of the sekiro save file (Default: C:\Users\{User}\AppData\Roaming\Sekiro\{76561197960267366}\S0000.sl2). Then select the location where you wanto to save all your savefile backups (Ex: C:\Users\User\Documents\Sekiro-Saves).
+1. Lead to Profiles to configure the program. Once here, select the path of the sekiro save file (Default: C:\Users\ {User}\AppData\Roaming\Sekiro\ {76561197960267366}\S0000.sl2). Then select the location where you wanto to save all your savefile backups (Ex: C:\Users\User\Documents\Sekiro-Saves).
 Create a profile for your saves (Ex: Any%).
 
 2. Return to the main program and press 'Refresh Profiles', after pressing 'Refresh Profiles' your new profile(s) will load. You can chage the selected profile by using the combobox.
