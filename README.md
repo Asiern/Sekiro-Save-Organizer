@@ -18,6 +18,7 @@ Things you might need to know:
 3. There's no verification when you remove your saves, be carefull.
 
 //Insert Pictures//
+
 Program Settup:
 1. Lead to Profiles to configure the program. Once here, select the path of the sekiro save file (Default: C:\Users\ {User}\AppData\Roaming\Sekiro\ {76561197960267366}\S0000.sl2). Then select the location where you wanto to save all your savefile backups (Ex: C:\Users\User\Documents\Sekiro-Saves).
 Create a profile for your saves (Ex: Any%).
