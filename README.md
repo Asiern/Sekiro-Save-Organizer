@@ -1,5 +1,6 @@
 # Sekiro-Save-Organizer
 Save Organizer for Sekiro: Shadows Die Twice 
+![alt text](https://github.com/PapaElGunmen/Sekiro-Save-Organizer/blob/master/SSO.png)
 
 # User's Guide
 
