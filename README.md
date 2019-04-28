@@ -12,18 +12,21 @@ Save Organizer for Sekiro: Shadows Die Twice
 
 # User's Guide
 Things you might need to know:
-1. Your two profiles can't have the same name.
-2. Same with your saves, two saves can't have the same name. If this happens your previous save whould be overwritten.
-3. There's no verification when you remove your saves so be carefull.
+1. Two profiles can't have the same name.
+2. Two saves can't have the same name in the same profile. If this happens your previous save whould be overwritten.
+3. There's no verification when you remove your saves, be carefull.
 
 
-Program Settup
+Program Settup:
 1. Lead to Profiles to configure the program. Once here, select the path of the sekiro save file (Default: C:\Users\{User}\AppData\Roaming\Sekiro\{76561197960267366}\S0000.sl2). Then select the location where you wanto to save all your savefile backups (Ex: C:\Users\User\Documents\Sekiro-Saves).
 Create a profile for your saves (Ex: Any%).
 
 2. Return to the main program and press 'Refresh Profiles', after pressing 'Refresh Profiles' your new profile(s) will load. You can chage the selected profile by using the combobox.
 
 3. Now, once you configured your program, you can import your savefiles.
+
+HotKeys Settup
+1. Hotkeys
 
 # Features
 1. Save management
