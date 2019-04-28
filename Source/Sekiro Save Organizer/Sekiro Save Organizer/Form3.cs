@@ -1,4 +1,5 @@
-﻿using Sekiro_Save_Organizer.Properties;
+﻿using MaterialSkin.Controls;
+using Sekiro_Save_Organizer.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Sekiro_Save_Organizer
 {
-    public partial class Form3 : Form
+    public partial class Form3 : MaterialForm
     {
         public Form3()
         {
@@ -69,8 +70,6 @@ namespace Sekiro_Save_Organizer
             else if (Settings.Default.Lang == "en")
             {
                 this.Text = "Settings";
-                groupBox1.Text = "HotKeys";
-                groupBox2.Text = "Language";
                 label1.Text = "Edit";
                 label2.Text = "Import";
                 label3.Text = "Load";
@@ -84,8 +83,6 @@ namespace Sekiro_Save_Organizer
             else if (Settings.Default.Lang == "es")
             {
                 this.Text = "Ajustes";
-                groupBox1.Text = "Teclas Rapidas";
-                groupBox2.Text = "Lenguaje";
                 label1.Text = "Editar";
                 label2.Text = "Importar";
                 label3.Text = "Cargar";

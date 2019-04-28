@@ -1,4 +1,5 @@
-﻿using Sekiro_Save_Organizer.Properties;
+﻿using MaterialSkin.Controls;
+using Sekiro_Save_Organizer.Properties;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Sekiro_Save_Organizer
 {
-    public partial class Form2 : Form
+    public partial class Form2 : MaterialForm
     {
         List<string> _items = new List<string>();
 
@@ -73,8 +74,6 @@ namespace Sekiro_Save_Organizer
             //English
             else if (Settings.Default.Lang == "en")
             {
-                groupBox1.Text = "Paths";
-                groupBox2.Text = "Profiles";
                 label1.Text = "Savefile path";
                 label2.Text = "Profiles path";
                 button5.Text = "Browse";
@@ -88,8 +87,6 @@ namespace Sekiro_Save_Organizer
             //Spanish
             else if (Settings.Default.Lang == "es")
             {
-                groupBox1.Text = "Rutas";
-                groupBox2.Text = "Perfiles";
                 label1.Text = "Ruta de los archivos de guardado";
                 label2.Text = "Ruta del guardado de los perfiles";
                 button5.Text = "Buscar";
@@ -116,7 +113,6 @@ namespace Sekiro_Save_Organizer
         //Brwose Button Profilepath
         private void button6_Click(object sender, EventArgs e)
         {
-            
             FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -132,10 +128,11 @@ namespace Sekiro_Save_Organizer
             string Profilename;
 
             //Inputbox Code
-            Profilename = Microsoft.VisualBasic.Interaction.InputBox(" ","Profile Name","New Profile",100,0);
+            Profilename = Microsoft.VisualBasic.Interaction.InputBox(" ", "Profile Name", "New Profile", 100, 0);
 
             return Profilename;
         }
+
         public void AddProfile(string name)
         {
             _items.Add(name);
@@ -146,7 +143,8 @@ namespace Sekiro_Save_Organizer
 
             SaveSettings();
         }
-        //Add Profiles
+
+        //New Profile
         private void button1_Click(object sender, EventArgs e)
         {
             string profilename = GetProfileName();
@@ -155,15 +153,16 @@ namespace Sekiro_Save_Organizer
             // Change the DataSource.
             Profiles.DataSource = null;
             Profiles.DataSource = _items;
-                        
+
             Form1 frm1 = new Form1();
             frm1.LoadComboBox();
 
             SaveSettings();
 
+            //Create DIR
         }
 
-        //Edit Profile Names
+        //Edit Profile
         private void button2_Click(object sender, EventArgs e)
         {
             int profileindex = Profiles.SelectedIndex;
@@ -174,7 +173,7 @@ namespace Sekiro_Save_Organizer
             SaveSettings();
         }
 
-        //Remove Profiles
+        //Remove Profile
         private void button4_Click(object sender, EventArgs e)
         {
             int profileindex = Profiles.SelectedIndex;
@@ -192,7 +191,5 @@ namespace Sekiro_Save_Organizer
 
             SaveSettings();
         }
-             
-         
     }
 }
