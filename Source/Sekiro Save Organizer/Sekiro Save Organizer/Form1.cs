@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +22,18 @@ namespace Sekiro_Save_Organizer
         public Form1()
         {
             InitializeComponent();
+            WebClient webClient = new WebClient();
+            if (!webClient.DownloadString("https://pastebin.com/raw/paSm7NLU").Contains("1.0"))
+            {
+                if (MessageBox.Show("Update available", "SekiroSaveOrganizerUpdater", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    System.Diagnostics.Process.Start("https://github.com/PapaElGunmen/Sekiro-Save-Organizer/releases");
+                }
+                else
+                {
+
+                }
+            }
         }
 
         //Save Settings
