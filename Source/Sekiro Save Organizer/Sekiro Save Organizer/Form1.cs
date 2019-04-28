@@ -68,9 +68,8 @@ namespace Sekiro_Save_Organizer
                     comboBox1.Items.Add(i);
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
             }
         }    
 
@@ -126,9 +125,8 @@ namespace Sekiro_Save_Organizer
                     Saves.DataSource = null;
                     Saves.DataSource = _items;
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
             }
         }
 
@@ -194,9 +192,8 @@ namespace Sekiro_Save_Organizer
                 //Save Settings
                 SaveSettings();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
             }
             
         }
@@ -236,9 +233,8 @@ namespace Sekiro_Save_Organizer
                {
                    Directory.Delete(path, true);
                }
-               catch (Exception ex)
+               catch
                {
-                   MessageBox.Show(ex.Message);
                }
 
             int saveindex = Saves.SelectedIndex;
@@ -247,9 +243,8 @@ namespace Sekiro_Save_Organizer
             {
                 _items.RemoveAt(saveindex);
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
             }
             Saves.DataSource = null;
             Saves.DataSource = _items;
@@ -331,9 +326,8 @@ namespace Sekiro_Save_Organizer
                 LoadSaves(saves);
             }
 
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
             }
         }
 
@@ -363,9 +357,8 @@ namespace Sekiro_Save_Organizer
 
                 SaveSettings();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
             }
         }
 
@@ -395,9 +388,8 @@ namespace Sekiro_Save_Organizer
                 //Save Settings
                 SaveSettings();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
             }
         }
 
@@ -431,9 +423,8 @@ namespace Sekiro_Save_Organizer
             {
                 Directory.Delete(path, true);
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
             }
 
             int saveindex = Saves.SelectedIndex;
@@ -442,9 +433,8 @@ namespace Sekiro_Save_Organizer
             {
                 _items.RemoveAt(saveindex);
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
             }
             Saves.DataSource = null;
             Saves.DataSource = _items;
