@@ -57,9 +57,8 @@ namespace Sekiro_Save_Organizer
                 }
             }
 
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
             }
         }
 
@@ -182,9 +181,8 @@ namespace Sekiro_Save_Organizer
             {
                 _items.RemoveAt(profileindex);
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
             }
             Profiles.DataSource = null;
             Profiles.DataSource = _items;

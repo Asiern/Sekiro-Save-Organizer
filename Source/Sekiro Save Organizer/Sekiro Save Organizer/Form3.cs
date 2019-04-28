@@ -110,9 +110,8 @@ namespace Sekiro_Save_Organizer
 
                 SaveSettings();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
                 textBox1.Text = "";
             }
         }
@@ -129,10 +128,9 @@ namespace Sekiro_Save_Organizer
 
                 SaveSettings();
             }
-            catch (Exception ex)
+            catch
             {
                 textBox2.Text = "";
-                MessageBox.Show(ex.Message);
             }
         }
 
@@ -148,9 +146,8 @@ namespace Sekiro_Save_Organizer
 
                 SaveSettings();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
                 textBox3.Text = "";
             }
         }
@@ -167,9 +164,8 @@ namespace Sekiro_Save_Organizer
 
                 SaveSettings();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
                 textBox4.Text = "";
             }
         }
@@ -186,9 +182,8 @@ namespace Sekiro_Save_Organizer
 
                 SaveSettings();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
                 textBox5.Text = "";
             }
         }
