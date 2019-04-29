@@ -5,7 +5,13 @@ Save Organizer for Sekiro: Shadows Die Twice
 
 # FAQ
 //Correct explanation//
-1. Q: How can I import a profile from a previous version? A: Your can import profiles by copying the folder with the saves to the folder you've selected in profiles path And create a profile with the name of the folder. Example: If you want to import a profile called 'Any%' you have to copy your Any% folder from your previous version and paste it to the folder you have selected in 'Profiles' (Ex: C:\Users\User\Documents\Sekiro-Saves). Then create a new profile called 'Any%'. And refresh profiles.
+1. Q: How can I import a profile from a previous version? A: You can import a profile from a previous version by copying the data to the folder you have selected in profiles path and creating a profile with the name of the folder. 
+
+&nbsp;&nbsp;&nbsp; Example: If you want to import a profile called 'Any%' you have to copy your Any% folder from your previous version and paste it to the folder you have selected in 'Profiles path' (Ex: D:\Dark Souls\Sekiro\Saves). 
+
+![alt text](https://github.com/PapaElGunmen/Sekiro-Save-Organizer/blob/master/profilepath.png) 
+
+&nbsp;&nbsp;&nbsp; Then create a new profile called 'Any%'. And refresh profiles.
 
 2. Q: Does my profile files remove when I remove the profile in the program? A: No it doesn't. Your profile remains in the profiles folder. You can restore the profile by just creating it again.
 
