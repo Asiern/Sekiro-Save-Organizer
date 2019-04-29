@@ -4,7 +4,6 @@ Save Organizer for Sekiro: Shadows Die Twice
 ![alt text](https://github.com/PapaElGunmen/Sekiro-Save-Organizer/blob/master/SSO.png)
 
 # FAQ
-//Correct explanation//
 1. Q: How can I import a profile from a previous version? A: You can import a profile from a previous version by copying the data to the folder you have selected in profiles path and creating a profile with the name of the folder. 
 
 &nbsp;&nbsp;&nbsp; Example: If you want to import a profile called 'Any%' you have to copy your Any% folder from your previous version and paste it to the folder you have selected in 'Profiles path' (Ex: D:\Dark Souls\Sekiro\Saves). 
