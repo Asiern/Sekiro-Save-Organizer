@@ -20,10 +20,21 @@ Things you might need to know:
 //Insert Pictures//
 
 Program Settup:
-1. Lead to Profiles to configure the program. Once here, select the path of the sekiro save file (Default: C:\Users\ {User}\AppData\Roaming\Sekiro\ {76561197960267366}\S0000.sl2). Then select the location where you wanto to save all your savefile backups (Ex: C:\Users\User\Documents\Sekiro-Saves).
-Create a profile for your saves (Ex: Any%).
+1. Lead to Profiles to configure the program. 
 
-2. Return to the main program and press 'Refresh Profiles', after pressing 'Refresh Profiles' your new profile(s) will load. You can chage the selected profile by using the combobox.
+![alt text](https://github.com/PapaElGunmen/Sekiro-Save-Organizer/blob/master/profiles.png)
+
+Once here, select the path of the sekiro save file (Default: C:\Users\ "Your User Name"\AppData\Roaming\Sekiro\ "Your Steam ID" \S0000.sl2). 
+
+![alt text](https://github.com/PapaElGunmen/Sekiro-Save-Organizer/blob/master/savefilepath.png)
+
+Then select the location where you want to save all your savefile backups (Ex: C:\Users\User\Documents\Sekiro-Saves).
+
+![alt text](https://github.com/PapaElGunmen/Sekiro-Save-Organizer/blob/master/profilepath.png)
+
+Create a profile for your saves by clicking 'NEW' (Example name: Any%).
+
+2. Return to the main program and press 'Refresh Profiles'. After pressing 'Refresh Profiles' your new profile(s) will load. You can chage the selected profile by using the combobox.
 
 3. Now, once you configured your program, you can import your savefiles.
 
