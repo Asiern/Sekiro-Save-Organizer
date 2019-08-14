@@ -1,4 +1,5 @@
-﻿using MaterialSkin.Controls;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
 using Sekiro_Save_Organizer.Properties;
 using System;
 using System.Collections;
@@ -24,6 +25,10 @@ namespace Sekiro_Save_Organizer
         {
             InitializeComponent();
             WebClient webClient = new WebClient();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
             if (!webClient.DownloadString("https://pastebin.com/raw/paSm7NLU").Contains("1.2"))
             {
                 if (MessageBox.Show("Update available", "SekiroSaveOrganizerUpdater", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
