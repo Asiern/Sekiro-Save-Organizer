@@ -1,20 +1,18 @@
 # Sekiro-Save-Organizer
 Save Organizer for Sekiro: Shadows Die Twice 
 
-![alt text](https://github.com/PapaElGunmen/Sekiro-Save-Organizer/blob/master/SSO.png)
+![alt text](https://github.com/Asiern/Sekiro-Save-Organizer/blob/master/SSO.png)
 
 # FAQ
 1. Q: How can I import a profile from a previous version? A: You can import a profile from a previous version by copying the data to the folder you have selected in profiles path and creating a profile with the name of the folder. 
 
 &nbsp;&nbsp;&nbsp; Example: If you want to import a profile called 'Any%' you have to copy your Any% folder from your previous version and paste it to the folder you have selected in 'Profiles path' (Ex: D:\Dark Souls\Sekiro\Saves). 
 
-![alt text](https://github.com/PapaElGunmen/Sekiro-Save-Organizer/blob/master/profilepath.png) 
+![alt text](https://github.com/Asiern/Sekiro-Save-Organizer/blob/master/profilepath.png) 
 
 &nbsp;&nbsp;&nbsp; Then create a new profile called 'Any%'. And refresh profiles.
 
 2. Q: Does my profile files remove when I remove the profile in the program? A: No it doesn't. Your profile remains in the profiles folder. You can restore the profile by just creating it again.
-
-3. Q: How can I send a question? A: Create an issue and ask there. I will answer you as fast as I can. 
 
 # User's Guide
 Things you might need to know:
@@ -26,15 +24,15 @@ Things you might need to know:
 Program Settup:
 1. Lead to Profiles to configure the program. 
 
-  ![alt text](https://github.com/PapaElGunmen/Sekiro-Save-Organizer/blob/master/profiles.png)
+  ![alt text](https://github.com/Asiern/Sekiro-Save-Organizer/blob/master/profiles.png)
 
   Once here, select the path of the sekiro save file (Default: C:\Users\ "Your User Name"\AppData\Roaming\Sekiro\ "Your Steam ID"   \S0000.sl2). 
 
-  ![alt text](https://github.com/PapaElGunmen/Sekiro-Save-Organizer/blob/master/savefilepath.png)
+  ![alt text](https://github.com/Asiern/Sekiro-Save-Organizer/blob/master/savefilepath.png)
 
   Then select the location where you want to save all your savefile backups (Ex: C:\Users\User\Documents\Sekiro-Saves).
 
-  ![alt text](https://github.com/PapaElGunmen/Sekiro-Save-Organizer/blob/master/profilepath.png)
+  ![alt text](https://github.com/Asiern/Sekiro-Save-Organizer/blob/master/profilepath.png)
 
   Create a profile for your saves by clicking 'NEW' (Example name: Any%).
 
@@ -48,3 +46,7 @@ Program Settup:
 3. Multi Language support
 4. Support for multiple profiles
 5. Material Design UI
+
+# Material Skin
+
+Using [MaterialSkin](https://github.com/IgnaceMaes/MaterialSkin) by Ignace Maes
